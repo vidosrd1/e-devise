@@ -1,0 +1,48 @@
+<li class="nav-item">
+  <a class="nav-link disabled">Disabled</a>
+</li>
+
+<a class="dropdown-item" href="#">Action</a>
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+<% if user_signed_in? %>
+  <li class="nav-item">
+    <%= link_to 'Posts', posts_path, class: 'nav-link' %>
+  </li>
+<% end %>
+<ul class="nav navbar-nav navbar-right">
+  <% if user_signed_in? %>
+    <li class="nav-item ">
+      <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= button_to(
+        "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+    </li>
+  <% else %>
+    <li class="nav-item">
+      <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+    </li>
+  <% end %>
+</ul>
+<form class="d-flex" role="search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<div style="5px 15px 15px 15px" color="red" text-align="center"></div>
+<p style="15px 15px 15px 15px" color="red" text-align="center"></p>
+ style="1px 1px 1px 1px"
+<li class="nav-item">
+  <a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+  <%= link_to 'Lists', lists_path, class: 'nav-link' %>
+</li>
