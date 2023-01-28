@@ -14,4 +14,11 @@
     <%= article.publish %>
   </p>
 
+  <br />
+
+  <% if article.image.content_type.in?(%w[image/jpeg image/png image/jpg]) %>
+    <%= link_to image_tag(article.image_as_thumbnail),
+      article.image if
+      article.image.attached? %>
+  <% end %>
 </div>

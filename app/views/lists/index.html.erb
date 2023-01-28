@@ -1,5 +1,7 @@
 <div class="container">
   <h1>Lists</h1>
+  <%= link_to 'New List', new_list_path %>
+  <hr />
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
@@ -22,14 +24,12 @@
          <td><%= link_to 'Show', list %></td>
          <td style="width:7px; heigh:auto"></td>
          <td><%= link_to 'Edit', edit_list_path(list) %></td>
-         <td style="width:7px; heigh:auto"></td>
-         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
        </tr>
      <% end %>
     </tbody>
   </table>
-  <br>
 </div>
+<hr />
 <div class="container">
   <%= link_to 'New List', new_list_path %>
 </div>

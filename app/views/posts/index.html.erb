@@ -1,5 +1,7 @@
 <div class="container">
   <h1>Posts</h1>
+  <%= link_to 'New Post', new_post_path %>
+  <hr />
   <table>
     <thead>
       <tr>
@@ -19,14 +21,12 @@
          <td><%= link_to 'Show', post %></td>
          <td style="width:7px; heigh:auto"></td>
          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-         <td style="width:7px; heigh:auto"></td>
-         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
        </tr>
      <% end %>
     </tbody>
   </table>
-  <br>
 </div>
+<hr />
 <div class="container">
   <%= link_to 'New Post', new_post_path %>
 </div>
